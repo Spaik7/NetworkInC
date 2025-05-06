@@ -108,7 +108,7 @@ int main()
 
         }
 
-        for(int i=1;i<=nfds&&n_events>0;i++)
+        for(int i=0;i<=nfds&&n_events>=0;i++)
         {
             if(fds[i].revents & POLLIN)
             {
@@ -139,8 +139,7 @@ int main()
 
             }
         }
-        return 0;
     }
-
+    return 0;
 
 }
