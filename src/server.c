@@ -108,14 +108,14 @@ int main()
 
         }
 
-        for(int i=0;i<=nfds&&n_events>=0;i++)
+        for(int i=1;i<=nfds&&n_events>0;i++)
         {
             if(fds[i].revents & POLLIN)
             {
                 n_events--;
 
                 int fd = fds[i].fd;
-                int slot = find_free_slot();
+                int slot = find_free_slot()-1;
                 ssize_t bytes_read = read(fd, &clientStates[slot].buffer, sizeof(clientStates[slot].buffer));
                 if(bytes_read<=0)
                 {

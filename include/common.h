@@ -4,7 +4,7 @@
 #include <netinet/in.h>
 
 #define PORT 5555
-#define BUF_SIZE 4096
+#define BUF_SIZE 4096 
 #define MAX_CLIENT 10
 
 typedef enum {
